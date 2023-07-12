@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B24C8B082A5F404400EDF653 /* RecordFeelings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24C8B072A5F404400EDF653 /* RecordFeelings.swift */; };
 		B59F38DD2A5CD3AE0058A41A /* JournalAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59F38DC2A5CD3AE0058A41A /* JournalAppApp.swift */; };
 		B59F38DF2A5CD3AE0058A41A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59F38DE2A5CD3AE0058A41A /* ContentView.swift */; };
 		B59F38E12A5CD3B00058A41A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B59F38E02A5CD3B00058A41A /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B24C8B072A5F404400EDF653 /* RecordFeelings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordFeelings.swift; sourceTree = "<group>"; };
 		B59F38D92A5CD3AE0058A41A /* JournalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JournalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B59F38DC2A5CD3AE0058A41A /* JournalAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalAppApp.swift; sourceTree = "<group>"; };
 		B59F38DE2A5CD3AE0058A41A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,9 +34,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B24C8B062A5F3FEF00EDF653 /* audio */ = {
+			isa = PBXGroup;
+			children = (
+				B24C8B072A5F404400EDF653 /* RecordFeelings.swift */,
+			);
+			path = audio;
+			sourceTree = "<group>";
+		};
 		B59F38D02A5CD3AE0058A41A = {
 			isa = PBXGroup;
 			children = (
+				B24C8B062A5F3FEF00EDF653 /* audio */,
 				B59F38DB2A5CD3AE0058A41A /* JournalApp */,
 				B59F38DA2A5CD3AE0058A41A /* Products */,
 			);
@@ -138,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B59F38DF2A5CD3AE0058A41A /* ContentView.swift in Sources */,
+				B24C8B082A5F404400EDF653 /* RecordFeelings.swift in Sources */,
 				B59F38DD2A5CD3AE0058A41A /* JournalAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -202,6 +214,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				f = "";
 			};
 			name = Debug;
 		};
@@ -256,6 +269,7 @@
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
+				f = "";
 			};
 			name = Release;
 		};
@@ -269,6 +283,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"JournalApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -297,6 +312,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"JournalApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
