@@ -227,7 +227,7 @@ struct LoginAppView: View {
                 
                 
             }//end of zstack
-            NavigationLink(destination: ContentView(), isActive: $isPasswordCorrect){
+            NavigationLink(destination: FeelingsSummaryView(), isActive: $isPasswordCorrect){
                 EmptyView()
             }
         }//end of navstack
