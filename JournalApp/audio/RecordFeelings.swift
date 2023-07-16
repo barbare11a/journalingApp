@@ -11,13 +11,23 @@ import AVFoundation
 struct RecordFeelings: View {
     
     @State var record = false
-    @State var session : AVAudioSession! //instance for recording
-    @State var recorder:AVAudioRecorder!
+    @Binding var session : AVAudioSession! //instance for recording
+    @Binding var recorder:AVAudioRecorder!
+    let myEmotion: String
+        
+        //View Constructor
+        init(session: Binding<AVAudioSession?>, recorder: Binding<AVAudioRecorder?>, myEmotion: String) {
+            
+            _session = session
+            _recorder = recorder
+            self.myEmotion = myEmotion
+        }
+    
+    
     var body: some View {
         
         
         VStack{
-            Rectangle().frame(height: 40).foregroundColor(.blue) // Upper menu stuff
             
             Text("Take a moment for your feelings").bold().font(.system(size: 30))
             Text("Click on your emotion to record")
@@ -26,14 +36,21 @@ struct RecordFeelings: View {
                 record.toggle()
             }){
                 ZStack{
+                   
+                    Image(myEmotion)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 220, height: 220)
+                        .clipShape(Circle())
+                    
                     if record {
-                        Circle().fill(Color(hex: "#6911F9")).frame(width: 220, height: 220).opacity(0.4)
+                        Image("pause")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 220, height: 220)
+                            .clipShape(Circle())
                         
                     }
-                   
-                    Circle().fill(Color(hex: "#6911F9")).frame(width: 190, height: 190)
-                    
-                    
                 }
             }
             Spacer()
@@ -50,23 +67,14 @@ struct RecordFeelings: View {
 
 
 struct record_feelings_Previews: PreviewProvider {
+    
     static var previews: some View {
-        RecordFeelings()
-    }
-}
-
-extension Color {
-    init(hex: String) {
-        var hexValue: UInt64 = 0
-        let scanner = Scanner(string: hex)
-        scanner.charactersToBeSkipped = CharacterSet(charactersIn: "#")
+        @State  var session: AVAudioSession?
+        @State  var recorder: AVAudioRecorder?
+        @State var myString = "angry"
         
-        scanner.scanHexInt64(&hexValue)
-
-        let red = Double((hexValue & 0xFF0000) >> 16) / 255.0
-        let green = Double((hexValue & 0x00FF00) >> 8) / 255.0
-        let blue = Double(hexValue & 0x0000FF) / 255.0
-
-        self.init(red: red, green: green, blue: blue)
+        RecordFeelings(session: $session, recorder: $recorder, myEmotion: myString)
     }
 }
+
+

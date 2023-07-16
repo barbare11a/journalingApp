@@ -12,7 +12,7 @@ struct JournalAppApp: App {
     var body: some Scene {
         WindowGroup {
 //            ContentView()
-            RecordFeelings()
+            ContentView()
         }
     }
 }
