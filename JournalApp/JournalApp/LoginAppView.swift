@@ -72,50 +72,32 @@ struct LoginAppView: View {
                     .padding(.bottom)// VStack{
                         
                         HStack{
-                            //the person icon is lost in the void
+                           
                             Image(systemName: "person.fill")
                                 .padding(.leading)
                                 .padding(.leading)
                                 .padding(.leading)
                                 .padding(.leading)
                                 .padding(.leading)
-                                .padding(.leading)
-                                .padding(.leading)
-                                .padding(.bottom)
-                                .padding(.bottom)
-                                .padding(.bottom)
+
+                             
+                            
                             TextField("email", text: $email)
                                 .font(.system(size: 20))
                                
-                                .background(Rectangle()
-                                    .foregroundColor(.clear)
-                                    .frame(width: 309, height: 61)
-                                    .background(Color(red: 0.16, green: 0.5, blue: 0.9).opacity(0.2))
-                                    .cornerRadius(90))
-                                .padding(.trailing)
-                                .padding(.trailing)
-                                .padding(.trailing)
-                                .padding(.trailing)
-                                .padding(.trailing)
-                                .padding(.trailing)
-                                .padding(.trailing)
-                                .padding(.bottom)
-                                .padding(.bottom)
-                                .padding(.bottom)
+                                
                             
                              
                             if(email.count != 0){
                                 Image(systemName: email.isValidEmail() ? "checkmark" : "xmark")
                                     //.frame(width: 30)
-                                   /* .padding(.bottom)
-                                    .padding(.bottom)
-                                    .padding(.bottom)
+                                    
                                     .padding(.trailing)
                                     .padding(.trailing)
                                     .padding(.trailing)
                                     .padding(.trailing)
                                     .padding(.trailing)
-                                    */
+                                    
                                 
                                     .fontWeight(.bold)
                                     .foregroundColor(email.isValidEmail() ? .green : .red)
@@ -124,7 +106,16 @@ struct LoginAppView: View {
                                                 
 
                             
-                        }
+                        }.background(Rectangle()
+                            .foregroundColor(.clear)
+                            .frame(width: 305, height: 61)
+                            .background(Color(red: 0.16, green: 0.5, blue: 0.9).opacity(0.2))
+                            .cornerRadius(90))
+                        .padding(.leading)
+                        .padding(.leading)
+                        .padding(.bottom)
+                        .padding(.bottom)
+                        .padding(.bottom)
                 
                         
                         HStack{
@@ -229,6 +220,9 @@ struct LoginAppView: View {
                 
                 
             }//end of zstack
+            NavigationLink(destination: ContentView(), isActive: $isPasswordCorrect){
+                EmptyView()
+            }
         }//end of navstack
     }//end of body
 }//end of loginview

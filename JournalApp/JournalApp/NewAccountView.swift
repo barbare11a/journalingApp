@@ -65,57 +65,51 @@ struct NewAccountView: View {
                     .padding(.bottom)
                     .padding(.bottom)// VStack{
                         
-                        HStack{
-                            //the person icon is lost in the void
-                            Image(systemName: "person.fill")
-                                .padding(.leading)
-                                .padding(.leading)
-                                .padding(.leading)
-                                .padding(.leading)
-                                .padding(.leading)
-                                .padding(.leading)
-                                .padding(.leading)
-                                .padding(.bottom)
-                                .padding(.bottom)
-                                .padding(.bottom)
-                            TextField("email", text: $email)
-                                .font(.system(size: 20))
-                               
-                                .background(Rectangle()
-                                    .foregroundColor(.clear)
-                                    .frame(width: 309, height: 61)
-                                    .background(Color(red: 0.16, green: 0.5, blue: 0.9).opacity(0.2))
-                                    .cornerRadius(90))
-                                .padding(.trailing)
-                                .padding(.trailing)
-                                .padding(.trailing)
-                                .padding(.trailing)
-                                .padding(.trailing)
-                                .padding(.trailing)
-                                .padding(.trailing)
-                                .padding(.bottom)
-                                .padding(.bottom)
-                                .padding(.bottom)
-                            
-                            if(email.count != 0){
-                                Image(systemName: email.isValidEmail() ? "checkmark" : "xmark")
-                                    .frame(width: 30)
-                                    .padding(.bottom)
-                                    .padding(.bottom)
-                                    .padding(.bottom)
-                                    .padding(.trailing)
-                                    .padding(.trailing)
-                                    .padding(.trailing)
-                                    .padding(.trailing)
-                                
-                                    .fontWeight(.bold)
-                                    .foregroundColor(email.isValidEmail() ? .green : .red)
-                            }
-                                
-                                                
+                    HStack{
+                       
+                        Image(systemName: "person.fill")
+                            .padding(.leading)
+                            .padding(.leading)
+                            .padding(.leading)
+                            .padding(.leading)
+                            .padding(.leading)
 
+                         
+                        
+                        TextField("email", text: $email)
+                            .font(.system(size: 20))
+                           
                             
+                        
+                         
+                        if(email.count != 0){
+                            Image(systemName: email.isValidEmail() ? "checkmark" : "xmark")
+                                //.frame(width: 30)
+                                
+                                .padding(.trailing)
+                                .padding(.trailing)
+                                .padding(.trailing)
+                                .padding(.trailing)
+                                .padding(.trailing)
+                                
+                            
+                                .fontWeight(.bold)
+                                .foregroundColor(email.isValidEmail() ? .green : .red)
                         }
+                            
+                                            
+
+                        
+                    }.background(Rectangle()
+                        .foregroundColor(.clear)
+                        .frame(width: 305, height: 61)
+                        .background(Color(red: 0.16, green: 0.5, blue: 0.9).opacity(0.2))
+                        .cornerRadius(90))
+                    .padding(.leading)
+                    .padding(.leading)
+                    .padding(.bottom)
+                    .padding(.bottom)
+                    .padding(.bottom)
                 
                         
                         HStack{
@@ -166,7 +160,7 @@ struct NewAccountView: View {
                             .padding(.leading)
                             .padding(.leading)
                             .sheet(isPresented: $isCreateAccountViewPresented){
-                                LoginAppView()
+                                ContentView()
                             }
                         
                         //THIS SHOULD NOT TAKE TO LOGIN APP IT SHOULD DIRECT TO HOMEPAGE/CHECKIN
