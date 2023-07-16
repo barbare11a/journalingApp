@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct LoginAppView: View {
     
@@ -108,7 +109,7 @@ struct LoginAppView: View {
                             
                         }.background(Rectangle()
                             .foregroundColor(.clear)
-                            .frame(width: 305, height: 61)
+                            .frame(width: 315, height: 61)
                             .background(Color(red: 0.16, green: 0.5, blue: 0.9).opacity(0.2))
                             .cornerRadius(90))
                         .padding(.leading)
@@ -116,36 +117,43 @@ struct LoginAppView: View {
                         .padding(.bottom)
                         .padding(.bottom)
                         .padding(.bottom)
-                
+                        .padding(.trailing)
+                        .padding(.trailing)
                         
-                        HStack{
-                            Image(systemName: "lock.fill")
-                                .padding(.leading)
-                                .padding(.leading)
-                                .padding(.leading)
-                                .padding(.leading)
-                                .padding(.leading)
-                                .padding(.leading)
-                                .padding(.leading)
-                            TextField("password", text: $password)
-                                .font(.system(size: 20))
-                               
-                                .background(Rectangle()
-                                    .foregroundColor(.clear)
-                                    .frame(width: 309, height: 61)
-                                    .background(Color(red: 0.16, green: 0.5, blue: 0.9).opacity(0.2))
-                                    .cornerRadius(90))
-                                .padding(.trailing)
-                                .padding(.trailing)
-                                .padding(.trailing)
-                                .padding(.trailing)
-                                .padding(.trailing)
-                                .padding(.trailing)
-                                .padding(.trailing)
-
-                            
-                        }//end hstack
+                        
+                        
                     
+                            
+                            HStack{
+                                Image(systemName: "lock.fill")
+                                    .padding(.leading)
+                                    .padding(.leading)
+                                    .padding(.leading)
+                                    .padding(.leading)
+                                    .padding(.leading)
+                                    .padding(.leading)
+                                    .padding(.leading)
+                                TextField("password", text: $password)
+                                    .font(.system(size: 20))
+                                   
+                                    .background(Rectangle()
+                                        .foregroundColor(.clear)
+                                        .frame(width: 309, height: 61)
+                                        .background(Color(red: 0.16, green: 0.5, blue: 0.9).opacity(0.2))
+                                        .cornerRadius(90))
+                                    .padding(.trailing)
+                                    .padding(.trailing)
+                                    .padding(.trailing)
+                                    .padding(.trailing)
+                                    .padding(.trailing)
+                                    .padding(.trailing)
+                                    .padding(.trailing)
+                                    .padding(.trailing)
+                                    .padding(.trailing)
+                                    
+
+                                
+                            }//end hstack
                     HStack{
                         Spacer()
                         Spacer()
@@ -173,36 +181,35 @@ struct LoginAppView: View {
                         
                         Button(action: {
                             
-                           // Auth.auth().signIn(withEmail: email, password: password){
-                              //  authResult, error in
+                            Auth.auth().signIn(withEmail: email, password: password){
+                                authResult, error in
                                 
-                             //   if let error = error{
-                               //     print(error)
-                                 //   email = ""
-                                   // password = ""
-                                    //showErrorAlert.toggle()
+                                if let error = error{
+                                    print(error)
+                                    email = ""
+                                    password = ""
+                                    showErrorAlert.toggle()
                                     
-                              //  }
+                                }
                                 
-                              //  if let authResult = authResult{
+                                if let authResult = authResult{
                                     isPasswordCorrect = true
-                               // }
-                            //}//end signin
+                                }
+                            }//end signin
                             
                         }) {
                             Image(systemName: "arrow.right.circle.fill")
                                 .font(.system(size: 40))
-                                    .foregroundColor(.red)
+                                    .foregroundColor(.blue)
                                     .padding(.top)
                                     .padding(.top)
-                                    .padding(.leading)
-                                    .padding(.leading)
-                                    .padding(.leading)
-                                    .padding(.leading)
-                                    .padding(.leading)
+                                    //.padding(.leading)
+                                    //.padding(.leading)
+                                    //.padding(.leading)
+                                    
                             
                                 .alert(isPresented: $showErrorAlert, content:{
-                                    Alert(title: Text("Error Login please check email and password"))})
+                                    Alert(title: Text("Login Error: Incorrect email or password"))})
                                 }
                 
                           

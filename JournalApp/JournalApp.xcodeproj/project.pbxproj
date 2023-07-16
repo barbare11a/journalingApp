@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B50F07C92A63788700745E2E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B50F07C82A63788700745E2E /* GoogleService-Info.plist */; };
+		B50F07CC2A6378F400745E2E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B50F07CB2A6378F400745E2E /* FirebaseAuth */; };
 		B549899B2A634201004964AD /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B549899A2A634201004964AD /* String.swift */; };
 		B59F38DD2A5CD3AE0058A41A /* JournalAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59F38DC2A5CD3AE0058A41A /* JournalAppApp.swift */; };
 		B59F38DF2A5CD3AE0058A41A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59F38DE2A5CD3AE0058A41A /* ContentView.swift */; };
@@ -17,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B50F07C82A63788700745E2E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B549899A2A634201004964AD /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		B59F38D92A5CD3AE0058A41A /* JournalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JournalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B59F38DC2A5CD3AE0058A41A /* JournalAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalAppApp.swift; sourceTree = "<group>"; };
@@ -32,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B50F07CC2A6378F400745E2E /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +74,7 @@
 				B59F38F02A6111F90058A41A /* LoginAppView.swift */,
 				B59F38F22A61127E0058A41A /* NewAccountView.swift */,
 				B59F38DE2A5CD3AE0058A41A /* ContentView.swift */,
+				B50F07C82A63788700745E2E /* GoogleService-Info.plist */,
 				B59F38E02A5CD3B00058A41A /* Assets.xcassets */,
 				B59F38E22A5CD3B00058A41A /* Preview Content */,
 			);
@@ -100,6 +105,9 @@
 			dependencies = (
 			);
 			name = JournalApp;
+			packageProductDependencies = (
+				B50F07CB2A6378F400745E2E /* FirebaseAuth */,
+			);
 			productName = JournalApp;
 			productReference = B59F38D92A5CD3AE0058A41A /* JournalApp.app */;
 			productType = "com.apple.product-type.application";
@@ -128,6 +136,9 @@
 				Base,
 			);
 			mainGroup = B59F38D02A5CD3AE0058A41A;
+			packageReferences = (
+				B50F07CA2A6378F400745E2E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = B59F38DA2A5CD3AE0058A41A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -143,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B59F38E42A5CD3B00058A41A /* Preview Assets.xcassets in Resources */,
+				B50F07C92A63788700745E2E /* GoogleService-Info.plist in Resources */,
 				B59F38E12A5CD3B00058A41A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,6 +369,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B50F07CA2A6378F400745E2E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B50F07CB2A6378F400745E2E /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B50F07CA2A6378F400745E2E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B59F38D12A5CD3AE0058A41A /* Project object */;
 }
