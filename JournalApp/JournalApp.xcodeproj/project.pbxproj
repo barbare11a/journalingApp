@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B59F38DD2A5CD3AE0058A41A /* JournalAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59F38DC2A5CD3AE0058A41A /* JournalAppApp.swift */; };
 		B59F38DF2A5CD3AE0058A41A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59F38DE2A5CD3AE0058A41A /* ContentView.swift */; };
 		B59F38E12A5CD3B00058A41A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B59F38E02A5CD3B00058A41A /* Assets.xcassets */; };
 		B59F38E42A5CD3B00058A41A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B59F38E32A5CD3B00058A41A /* Preview Assets.xcassets */; };
 		E12711342A5F421D00581921 /* FeelingsSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12711332A5F421D00581921 /* FeelingsSummaryView.swift */; };
+		E1708DAF2A635B3700E76C8D /* JournalAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1708DAE2A635B3700E76C8D /* JournalAppApp.swift */; };
 		E1CEFDC32A61090B00A58D2E /* ProfilePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CEFDC22A61090B00A58D2E /* ProfilePageView.swift */; };
 		E1CEFDC52A6252DB00A58D2E /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CEFDC42A6252DA00A58D2E /* EditProfileView.swift */; };
 		E1ED87102A63112200D89CAC /* ProfileTopEmotionPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ED870F2A63112200D89CAC /* ProfileTopEmotionPicker.swift */; };
@@ -19,11 +19,11 @@
 
 /* Begin PBXFileReference section */
 		B59F38D92A5CD3AE0058A41A /* JournalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JournalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B59F38DC2A5CD3AE0058A41A /* JournalAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalAppApp.swift; sourceTree = "<group>"; };
 		B59F38DE2A5CD3AE0058A41A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B59F38E02A5CD3B00058A41A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B59F38E32A5CD3B00058A41A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E12711332A5F421D00581921 /* FeelingsSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingsSummaryView.swift; sourceTree = "<group>"; };
+		E1708DAE2A635B3700E76C8D /* JournalAppApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalAppApp.swift; sourceTree = "<group>"; };
 		E1CEFDC22A61090B00A58D2E /* ProfilePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageView.swift; sourceTree = "<group>"; };
 		E1CEFDC42A6252DA00A58D2E /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		E1ED870F2A63112200D89CAC /* ProfileTopEmotionPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTopEmotionPicker.swift; sourceTree = "<group>"; };
@@ -59,9 +59,9 @@
 		B59F38DB2A5CD3AE0058A41A /* JournalApp */ = {
 			isa = PBXGroup;
 			children = (
-				B59F38DC2A5CD3AE0058A41A /* JournalAppApp.swift */,
 				B59F38DE2A5CD3AE0058A41A /* ContentView.swift */,
 				E12711332A5F421D00581921 /* FeelingsSummaryView.swift */,
+				E1708DAE2A635B3700E76C8D /* JournalAppApp.swift */,
 				E1CEFDC22A61090B00A58D2E /* ProfilePageView.swift */,
 				E1CEFDC42A6252DA00A58D2E /* EditProfileView.swift */,
 				E1ED870F2A63112200D89CAC /* ProfileTopEmotionPicker.swift */,
@@ -150,10 +150,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1CEFDC52A6252DB00A58D2E /* EditProfileView.swift in Sources */,
+				E1708DAF2A635B3700E76C8D /* JournalAppApp.swift in Sources */,
 				E12711342A5F421D00581921 /* FeelingsSummaryView.swift in Sources */,
 				E1CEFDC32A61090B00A58D2E /* ProfilePageView.swift in Sources */,
 				B59F38DF2A5CD3AE0058A41A /* ContentView.swift in Sources */,
-				B59F38DD2A5CD3AE0058A41A /* JournalAppApp.swift in Sources */,
 				E1ED87102A63112200D89CAC /* ProfileTopEmotionPicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

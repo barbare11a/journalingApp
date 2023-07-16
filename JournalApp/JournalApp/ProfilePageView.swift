@@ -76,11 +76,9 @@ struct ProfilePageView: View {
                 
                 
                 HStack{
+                        
+                        emotionsView(topEmotion1: topEmotion1, topEmotion2: topEmotion2, topEmotion3: topEmotion3)
                     
-                    
-                    emotionsView(topEmotion1: topEmotion1, topEmotion2: topEmotion2, topEmotion3: topEmotion3)
-                   
-
                     
                 }
                 .padding(.top)
@@ -184,7 +182,7 @@ struct emotionsView: View {
         
         VStack{
             
-            if let topEmotion1 = topEmotion1, let topEmotion2 = topEmotion2, let topEmotion3 = topEmotion3 {
+            if let topEmotion1 = topEmotion1, let topEmotion2 = topEmotion2, let topEmotion3 = topEmotion3{
                 HStack{
                     
                     Spacer()
@@ -197,7 +195,7 @@ struct emotionsView: View {
                     Spacer()
                     
                     topEmotion3
-
+                    
                     Spacer()
                     
                 }
@@ -207,16 +205,19 @@ struct emotionsView: View {
                     
                     Spacer()
                     
-                    Image("plus.circle")
+                    Image(systemName: "plus.circle")
+                        .font(.system(size: 80).weight(.ultraLight))
                     
                     Spacer()
                     
-                    Image("plus.circle")
-                    
+                    Image(systemName: "plus.circle")
+                        .font(.system(size: 80).weight(.ultraLight))
+
                     Spacer()
                     
-                    Image("plus.circle")
-                    
+                    Image(systemName: "plus.circle")
+                        .font(.system(size: 80).weight(.ultraLight))
+
                     Spacer()
                     
                 }

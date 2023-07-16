@@ -154,16 +154,16 @@ struct ProfileTopEmotionPicker: View {
             
             
             Spacer()
-        
-            Text("Back to profile editor")
-                .padding(.bottom)
-                .foregroundColor(.blue)
-                .onTapGesture{
-                    saveSelectedEmotions()
-                    isShowingEmotionPicker = false
-                }
             
-        }
+        }//end VStack
+        .onChange(of: selectedEmotions) { emotions in
+                    if emotions.count >= 3 {
+                        topEmotion1 = emotions[0]
+                        topEmotion2 = emotions[1]
+                        topEmotion3 = emotions[2]
+                        isShowingEmotionPicker = false
+                    }
+                }
         
         
     }
@@ -198,7 +198,7 @@ struct EmotionSelectionView: View {
     let isSelected: Bool
     @Binding var selectedEmotions: [Image]
     let imageName:String
-    @Binding var topEmotion1: Image?
+    @Binding var topEmotion1: Image? 
     @Binding var topEmotion2: Image?
     @Binding var topEmotion3: Image?
     
