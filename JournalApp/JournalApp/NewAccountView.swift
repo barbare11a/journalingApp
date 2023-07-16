@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct NewAccountView: View {
     
@@ -65,57 +66,56 @@ struct NewAccountView: View {
                     .padding(.bottom)
                     .padding(.bottom)// VStack{
                         
-                        HStack{
-                            //the person icon is lost in the void
-                            Image(systemName: "person.fill")
-                                .padding(.leading)
-                                .padding(.leading)
-                                .padding(.leading)
-                                .padding(.leading)
-                                .padding(.leading)
-                                .padding(.leading)
-                                .padding(.leading)
-                                .padding(.bottom)
-                                .padding(.bottom)
-                                .padding(.bottom)
-                            TextField("email", text: $email)
-                                .font(.system(size: 20))
-                               
-                                .background(Rectangle()
-                                    .foregroundColor(.clear)
-                                    .frame(width: 309, height: 61)
-                                    .background(Color(red: 0.16, green: 0.5, blue: 0.9).opacity(0.2))
-                                    .cornerRadius(90))
-                                .padding(.trailing)
-                                .padding(.trailing)
-                                .padding(.trailing)
-                                .padding(.trailing)
-                                .padding(.trailing)
-                                .padding(.trailing)
-                                .padding(.trailing)
-                                .padding(.bottom)
-                                .padding(.bottom)
-                                .padding(.bottom)
-                            
-                            if(email.count != 0){
-                                Image(systemName: email.isValidEmail() ? "checkmark" : "xmark")
-                                    .frame(width: 30)
-                                    .padding(.bottom)
-                                    .padding(.bottom)
-                                    .padding(.bottom)
-                                    .padding(.trailing)
-                                    .padding(.trailing)
-                                    .padding(.trailing)
-                                    .padding(.trailing)
-                                
-                                    .fontWeight(.bold)
-                                    .foregroundColor(email.isValidEmail() ? .green : .red)
-                            }
-                                
-                                                
+                    HStack{
+                       
+                        Image(systemName: "person.fill")
+                            .padding(.leading)
+                            .padding(.leading)
+                            .padding(.leading)
+                            .padding(.leading)
+                            .padding(.leading)
 
+                         
+                        
+                        TextField("email", text: $email)
+                            .font(.system(size: 20))
+                           
                             
+                        
+                         
+                        if(email.count != 0){
+                            Image(systemName: email.isValidEmail() ? "checkmark" : "xmark")
+                                //.frame(width: 30)
+                                
+                                .padding(.trailing)
+                                .padding(.trailing)
+                                .padding(.trailing)
+                                .padding(.trailing)
+                                .padding(.trailing)
+                                
+                            
+                                .fontWeight(.bold)
+                                .foregroundColor(email.isValidEmail() ? .green : .red)
                         }
+                            
+                                            
+
+                        
+                    }.background(Rectangle()
+                        .foregroundColor(.clear)
+                        .frame(width: 315, height: 61)
+                        .background(Color(red: 0.16, green: 0.5, blue: 0.9).opacity(0.2))
+                        .cornerRadius(90))
+                    .padding(.leading)
+                    .padding(.leading)
+                    .padding(.bottom)
+                    .padding(.bottom)
+                    .padding(.bottom)
+                    .padding(.trailing)
+                    .padding(.trailing)
+                    
+                    
+                    
                 
                         
                         HStack{
@@ -142,6 +142,9 @@ struct NewAccountView: View {
                                 .padding(.trailing)
                                 .padding(.trailing)
                                 .padding(.trailing)
+                                .padding(.trailing)
+                                .padding(.trailing)
+                                
 
                             
                         }//end hstack
@@ -152,6 +155,21 @@ struct NewAccountView: View {
                         Spacer()
                         Spacer()
                         Spacer()
+                       
+                        Button(action: {
+                            presentationMode.wrappedValue.dismiss()
+                        }) {
+                            Text("cancel")
+                                .foregroundColor(.blue)
+                                .font(.system(size: 20))
+                        }
+                        .padding(.top)
+                        .padding(.top)
+                        Spacer()
+                        Spacer()
+                        
+                        
+                        /*
                         Button(action: {
                             isCreateAccountViewPresented.toggle()
                         }){Image(systemName: "arrow.right.circle.fill")
@@ -165,12 +183,57 @@ struct NewAccountView: View {
                             .padding(.leading)
                             .padding(.leading)
                             .padding(.leading)
+                            .padding(.leading)
+                            .padding(.leading)
+                            .padding(.leading)
+                            .padding(.trailing)
+                            .padding(.trailing)
+                            .padding(.trailing)
+                        
+        
                             .sheet(isPresented: $isCreateAccountViewPresented){
-                                LoginAppView()
+                                ContentView()
                             }
                         
                         //THIS SHOULD NOT TAKE TO LOGIN APP IT SHOULD DIRECT TO HOMEPAGE/CHECKIN
+                        */
                         
+                        //Spacer()
+                        
+                        //------------------------------------------------------
+                        Button(action: {
+                            Auth.auth().createUser(withEmail: email, password: password){
+                                authResult, error in
+                                if let error = error{
+                                    print(error)
+                                    
+                                    return
+                                }
+                                if let authResult = authResult{
+                                    print("\(authResult.user.uid)")
+                                }
+                            }
+                            presentationMode.wrappedValue.dismiss()
+                        }){
+                            Image(systemName: "arrow.right.circle.fill")
+                                .font(.system(size: 40))
+                                    .foregroundColor(.blue)
+                                    .padding(.top)
+                                    .padding(.top)
+                                    .padding(.leading)
+                                    .padding(.leading)
+                                    .padding(.leading)
+                                    .padding(.leading)
+                                    .padding(.leading)
+                                    .padding(.leading)
+                                    .padding(.leading)
+                                    .padding(.leading)
+                                    .padding(.trailing)
+                                    .padding(.trailing)
+                                    .padding(.trailing)
+                        }
+                        
+                       // Spacer()
                         
                 
                           

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct LoginAppView: View {
     
@@ -72,50 +73,32 @@ struct LoginAppView: View {
                     .padding(.bottom)// VStack{
                         
                         HStack{
-                            //the person icon is lost in the void
+                           
                             Image(systemName: "person.fill")
                                 .padding(.leading)
                                 .padding(.leading)
                                 .padding(.leading)
                                 .padding(.leading)
                                 .padding(.leading)
-                                .padding(.leading)
-                                .padding(.leading)
-                                .padding(.bottom)
-                                .padding(.bottom)
-                                .padding(.bottom)
+
+                             
+                            
                             TextField("email", text: $email)
                                 .font(.system(size: 20))
                                
-                                .background(Rectangle()
-                                    .foregroundColor(.clear)
-                                    .frame(width: 309, height: 61)
-                                    .background(Color(red: 0.16, green: 0.5, blue: 0.9).opacity(0.2))
-                                    .cornerRadius(90))
-                                .padding(.trailing)
-                                .padding(.trailing)
-                                .padding(.trailing)
-                                .padding(.trailing)
-                                .padding(.trailing)
-                                .padding(.trailing)
-                                .padding(.trailing)
-                                .padding(.bottom)
-                                .padding(.bottom)
-                                .padding(.bottom)
+                                
                             
                              
                             if(email.count != 0){
                                 Image(systemName: email.isValidEmail() ? "checkmark" : "xmark")
                                     //.frame(width: 30)
-                                   /* .padding(.bottom)
-                                    .padding(.bottom)
-                                    .padding(.bottom)
+                                    
                                     .padding(.trailing)
                                     .padding(.trailing)
                                     .padding(.trailing)
                                     .padding(.trailing)
                                     .padding(.trailing)
-                                    */
+                                    
                                 
                                     .fontWeight(.bold)
                                     .foregroundColor(email.isValidEmail() ? .green : .red)
@@ -124,37 +107,53 @@ struct LoginAppView: View {
                                                 
 
                             
-                        }
-                
+                        }.background(Rectangle()
+                            .foregroundColor(.clear)
+                            .frame(width: 315, height: 61)
+                            .background(Color(red: 0.16, green: 0.5, blue: 0.9).opacity(0.2))
+                            .cornerRadius(90))
+                        .padding(.leading)
+                        .padding(.leading)
+                        .padding(.bottom)
+                        .padding(.bottom)
+                        .padding(.bottom)
+                        .padding(.trailing)
+                        .padding(.trailing)
                         
-                        HStack{
-                            Image(systemName: "lock.fill")
-                                .padding(.leading)
-                                .padding(.leading)
-                                .padding(.leading)
-                                .padding(.leading)
-                                .padding(.leading)
-                                .padding(.leading)
-                                .padding(.leading)
-                            TextField("password", text: $password)
-                                .font(.system(size: 20))
-                               
-                                .background(Rectangle()
-                                    .foregroundColor(.clear)
-                                    .frame(width: 309, height: 61)
-                                    .background(Color(red: 0.16, green: 0.5, blue: 0.9).opacity(0.2))
-                                    .cornerRadius(90))
-                                .padding(.trailing)
-                                .padding(.trailing)
-                                .padding(.trailing)
-                                .padding(.trailing)
-                                .padding(.trailing)
-                                .padding(.trailing)
-                                .padding(.trailing)
-
-                            
-                        }//end hstack
+                        
+                        
                     
+                            
+                            HStack{
+                                Image(systemName: "lock.fill")
+                                    .padding(.leading)
+                                    .padding(.leading)
+                                    .padding(.leading)
+                                    .padding(.leading)
+                                    .padding(.leading)
+                                    .padding(.leading)
+                                    .padding(.leading)
+                                TextField("password", text: $password)
+                                    .font(.system(size: 20))
+                                   
+                                    .background(Rectangle()
+                                        .foregroundColor(.clear)
+                                        .frame(width: 309, height: 61)
+                                        .background(Color(red: 0.16, green: 0.5, blue: 0.9).opacity(0.2))
+                                        .cornerRadius(90))
+                                    .padding(.trailing)
+                                    .padding(.trailing)
+                                    .padding(.trailing)
+                                    .padding(.trailing)
+                                    .padding(.trailing)
+                                    .padding(.trailing)
+                                    .padding(.trailing)
+                                    .padding(.trailing)
+                                    .padding(.trailing)
+                                    
+
+                                
+                            }//end hstack
                     HStack{
                         Spacer()
                         Spacer()
@@ -182,36 +181,35 @@ struct LoginAppView: View {
                         
                         Button(action: {
                             
-                           // Auth.auth().signIn(withEmail: email, password: password){
-                              //  authResult, error in
+                            Auth.auth().signIn(withEmail: email, password: password){
+                                authResult, error in
                                 
-                             //   if let error = error{
-                               //     print(error)
-                                 //   email = ""
-                                   // password = ""
-                                    //showErrorAlert.toggle()
+                                if let error = error{
+                                    print(error)
+                                    email = ""
+                                    password = ""
+                                    showErrorAlert.toggle()
                                     
-                              //  }
+                                }
                                 
-                              //  if let authResult = authResult{
+                                if let authResult = authResult{
                                     isPasswordCorrect = true
-                               // }
-                            //}//end signin
+                                }
+                            }//end signin
                             
                         }) {
                             Image(systemName: "arrow.right.circle.fill")
                                 .font(.system(size: 40))
-                                    .foregroundColor(.red)
+                                    .foregroundColor(.blue)
                                     .padding(.top)
                                     .padding(.top)
-                                    .padding(.leading)
-                                    .padding(.leading)
-                                    .padding(.leading)
-                                    .padding(.leading)
-                                    .padding(.leading)
+                                    //.padding(.leading)
+                                    //.padding(.leading)
+                                    //.padding(.leading)
+                                    
                             
                                 .alert(isPresented: $showErrorAlert, content:{
-                                    Alert(title: Text("Error Login please check email and password"))})
+                                    Alert(title: Text("Login Error: Incorrect email or password"))})
                                 }
                 
                           
@@ -229,6 +227,9 @@ struct LoginAppView: View {
                 
                 
             }//end of zstack
+            NavigationLink(destination: ContentView(), isActive: $isPasswordCorrect){
+                EmptyView()
+            }
         }//end of navstack
     }//end of body
 }//end of loginview
