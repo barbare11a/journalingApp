@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B24C8B082A5F404400EDF653 /* RecordFeelings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24C8B072A5F404400EDF653 /* RecordFeelings.swift */; };
+		B298FBBA2A6460A700850E54 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B298FBB92A6460A700850E54 /* AudioRecorder.swift */; };
+		B298FBBD2A64811300850E54 /* DSWaveformImageViews in Frameworks */ = {isa = PBXBuildFile; productRef = B298FBBC2A64811300850E54 /* DSWaveformImageViews */; };
 		B59F38DD2A5CD3AE0058A41A /* JournalAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59F38DC2A5CD3AE0058A41A /* JournalAppApp.swift */; };
 		B59F38DF2A5CD3AE0058A41A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59F38DE2A5CD3AE0058A41A /* ContentView.swift */; };
 		B59F38E12A5CD3B00058A41A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B59F38E02A5CD3B00058A41A /* Assets.xcassets */; };
@@ -16,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		B24C8B072A5F404400EDF653 /* RecordFeelings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordFeelings.swift; sourceTree = "<group>"; };
+		B298FBB92A6460A700850E54 /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 		B59F38D92A5CD3AE0058A41A /* JournalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JournalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B59F38DC2A5CD3AE0058A41A /* JournalAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalAppApp.swift; sourceTree = "<group>"; };
 		B59F38DE2A5CD3AE0058A41A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -28,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B298FBBD2A64811300850E54 /* DSWaveformImageViews in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +42,7 @@
 			isa = PBXGroup;
 			children = (
 				B24C8B072A5F404400EDF653 /* RecordFeelings.swift */,
+				B298FBB92A6460A700850E54 /* AudioRecorder.swift */,
 			);
 			path = audio;
 			sourceTree = "<group>";
@@ -94,6 +99,9 @@
 			dependencies = (
 			);
 			name = JournalApp;
+			packageProductDependencies = (
+				B298FBBC2A64811300850E54 /* DSWaveformImageViews */,
+			);
 			productName = JournalApp;
 			productReference = B59F38D92A5CD3AE0058A41A /* JournalApp.app */;
 			productType = "com.apple.product-type.application";
@@ -122,6 +130,9 @@
 				Base,
 			);
 			mainGroup = B59F38D02A5CD3AE0058A41A;
+			packageReferences = (
+				B298FBBB2A64811200850E54 /* XCRemoteSwiftPackageReference "DSWaveformImage" */,
+			);
 			productRefGroup = B59F38DA2A5CD3AE0058A41A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -150,6 +161,7 @@
 			files = (
 				B59F38DF2A5CD3AE0058A41A /* ContentView.swift in Sources */,
 				B24C8B082A5F404400EDF653 /* RecordFeelings.swift in Sources */,
+				B298FBBA2A6460A700850E54 /* AudioRecorder.swift in Sources */,
 				B59F38DD2A5CD3AE0058A41A /* JournalAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,6 +365,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B298FBBB2A64811200850E54 /* XCRemoteSwiftPackageReference "DSWaveformImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmrschmidt/DSWaveformImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 13.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B298FBBC2A64811300850E54 /* DSWaveformImageViews */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B298FBBB2A64811200850E54 /* XCRemoteSwiftPackageReference "DSWaveformImage" */;
+			productName = DSWaveformImageViews;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B59F38D12A5CD3AE0058A41A /* Project object */;
 }
