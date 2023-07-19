@@ -21,6 +21,7 @@ struct LoginAppView: View {
     
     
     var body: some View {
+        
         NavigationStack{
             ZStack{
                 
@@ -120,9 +121,6 @@ struct LoginAppView: View {
                         .padding(.trailing)
                         .padding(.trailing)
                         
-                        
-                        
-                    
                             
                             HStack{
                                 Image(systemName: "lock.fill")
@@ -197,6 +195,7 @@ struct LoginAppView: View {
                                 }
                             }//end signin
                             
+                        
                         }) {
                             Image(systemName: "arrow.right.circle.fill")
                                 .font(.system(size: 40))
@@ -223,12 +222,9 @@ struct LoginAppView: View {
                     
                     
                 }//end of vstack
-                
-                
-                
             }//end of zstack
-            NavigationLink(destination: FeelingsSummaryView(), isActive: $isPasswordCorrect){
-                EmptyView()
+            
+            NavigationLink(destination: FeelingsPicker(), isActive: $isPasswordCorrect){
             }
         }//end of navstack
     }//end of body
@@ -236,7 +232,7 @@ struct LoginAppView: View {
 
 struct LoginAppView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginAppView()
+      LoginAppView()
     }
 }
 

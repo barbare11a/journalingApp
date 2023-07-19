@@ -2,19 +2,21 @@
 //  ContentView.swift
 //  JournalApp
 //
-//  Created by barbarella castillo on 7/10/23.
+//  Created by Mariapaula on 7/16/23.
 //
+//feelings page
 
 import SwiftUI
 
 struct ContentView: View {
+
     var body: some View {
         VStack {
-            Image(systemName: "globe")
+            Image(systemName: "happy")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
             Text("Hello, world!")
-            Text("this should be the emotions page")
+            Text("this should be the feelings page")
         }
         .padding()
     }
