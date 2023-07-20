@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B223B32A2A69B33A006A4123 /* RickRoll.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B223B3272A69A0D3006A4123 /* RickRoll.mp3 */; };
 		B24C8B082A5F404400EDF653 /* RecordFeelings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24C8B072A5F404400EDF653 /* RecordFeelings.swift */; };
 		B298FBBA2A6460A700850E54 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B298FBB92A6460A700850E54 /* AudioRecorder.swift */; };
 		B298FBBD2A64811300850E54 /* DSWaveformImageViews in Frameworks */ = {isa = PBXBuildFile; productRef = B298FBBC2A64811300850E54 /* DSWaveformImageViews */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B223B3272A69A0D3006A4123 /* RickRoll.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = RickRoll.mp3; sourceTree = "<group>"; };
 		B24C8B072A5F404400EDF653 /* RecordFeelings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordFeelings.swift; sourceTree = "<group>"; };
 		B298FBB92A6460A700850E54 /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 		B59F38D92A5CD3AE0058A41A /* JournalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JournalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,6 +43,7 @@
 		B24C8B062A5F3FEF00EDF653 /* audio */ = {
 			isa = PBXGroup;
 			children = (
+				B223B3272A69A0D3006A4123 /* RickRoll.mp3 */,
 				B24C8B072A5F404400EDF653 /* RecordFeelings.swift */,
 				B298FBB92A6460A700850E54 /* AudioRecorder.swift */,
 			);
@@ -148,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B59F38E42A5CD3B00058A41A /* Preview Assets.xcassets in Resources */,
+				B223B32A2A69B33A006A4123 /* RickRoll.mp3 in Resources */,
 				B59F38E12A5CD3B00058A41A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -41,9 +41,11 @@ struct RecordFeelings: View {
         
         
         VStack{
+            Spacer()
             
             Text("Take a moment for your feelings").bold().font(.system(size: 30))
             Text("Click on your emotion to record")
+            Spacer()
             Spacer()
             Button(action:{
                 record.toggle()
@@ -75,7 +77,9 @@ struct RecordFeelings: View {
                         
                     }
                 }//end zstack
+                
                             }
+            Spacer()
             if started && !record{
                 Button {
                     print("Button pressed")
@@ -103,6 +107,7 @@ struct RecordFeelings: View {
                     if (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("recording.WAV")) != nil {
                         myUrl = audioRecorder.saveRecording()
                                 }
+                    print("RECORDFEELINGS VIEW \(String(describing: myUrl))")
                 
                     presentationMode.wrappedValue.dismiss()//go back to previous screen
                     
@@ -121,19 +126,13 @@ struct RecordFeelings: View {
             .contentShape(Rectangle())
         }.padding(1)
     }
-}
-
-
-struct record_feelings_Previews: PreviewProvider {
     
-    static var previews: some View {
-        @State  var session: AVAudioSession?
-        @State  var recorder: AVAudioRecorder?
-        @State var myString = "angry"
-        @State var audioURL: URL?
-        
-        RecordFeelings(session: $session, recorder: $recorder, myEmotion: myString, audioURL: $audioURL)
-    }
+    
 }
+
+
+
+
+
 
 

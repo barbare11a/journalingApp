@@ -14,7 +14,6 @@ struct ContentView: View {
     @State var recorder:AVAudioRecorder!
     
     
-//    let audioURL = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("MyRecording.mp4"))!
     @State var audioURL: URL?
     let audioRecorder = AudioRecorder()
     
@@ -49,6 +48,15 @@ struct ContentView: View {
                         }
                         else{
                             print("No audio yet")
+                            let pathURL = Bundle.main.url(forResource: "RickRoll", withExtension: "mp3")
+                            if pathURL == nil{
+                                print("SHIT IS ASS")
+                            }else{
+                                print("\(String(describing: pathURL))")
+                                audioRecorder.playAudio(url: pathURL!)
+                                
+                            }
+//                            audioRecorder.playAudio(url:pathURL )
                         }
                     })
                 }

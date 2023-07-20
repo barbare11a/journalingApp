@@ -61,7 +61,10 @@ class AudioRecorder {
         
         do {
             let documentsDirectory = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-            let destinationURL = documentsDirectory.appendingPathComponent("recording.m4a")
+            
+            // Generate a unique identifier using UUID
+            let uniqueID = UUID().uuidString
+            let destinationURL = documentsDirectory.appendingPathComponent("recording_\(uniqueID).m4a")
             
             try fileManager.moveItem(at: recordingURL, to: destinationURL)
             print("Recording saved successfully at: \(destinationURL)")
