@@ -20,6 +20,7 @@
 		E17389CB2A63B10800CCD7A1 /* ProfilePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17389C92A63B10800CCD7A1 /* ProfilePageView.swift */; };
 		E17389CC2A63B10800CCD7A1 /* ProfileTopEmotionPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17389CA2A63B10800CCD7A1 /* ProfileTopEmotionPicker.swift */; };
 		E174AEE42A63B033005EFD04 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E174AEE32A63B033005EFD04 /* GoogleService-Info.plist */; };
+		F9B884D72A6886B100A7E075 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F9B884D62A6886B100A7E075 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		E17389C92A63B10800CCD7A1 /* ProfilePageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePageView.swift; sourceTree = "<group>"; };
 		E17389CA2A63B10800CCD7A1 /* ProfileTopEmotionPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTopEmotionPicker.swift; sourceTree = "<group>"; };
 		E174AEE32A63B033005EFD04 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F9B884D62A6886B100A7E075 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				E17389C12A63B0FD00CCD7A1 /* EditProfileView.swift */,
 				E17389C22A63B0FD00CCD7A1 /* FeelingsSummaryView.swift */,
 				E17389C92A63B10800CCD7A1 /* ProfilePageView.swift */,
+				F9B884D62A6886B100A7E075 /* GoogleService-Info.plist */,
 				E17389CA2A63B10800CCD7A1 /* ProfileTopEmotionPicker.swift */,
 				B59F38E02A5CD3B00058A41A /* Assets.xcassets */,
 				E174AEE32A63B033005EFD04 /* GoogleService-Info.plist */,
@@ -166,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B59F38E42A5CD3B00058A41A /* Preview Assets.xcassets in Resources */,
+				F9B884D72A6886B100A7E075 /* GoogleService-Info.plist in Resources */,
 				B59F38E12A5CD3B00058A41A /* Assets.xcassets in Resources */,
 				E174AEE42A63B033005EFD04 /* GoogleService-Info.plist in Resources */,
 			);
