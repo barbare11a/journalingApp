@@ -21,8 +21,6 @@ struct ProfilePageView: View {
     @State var topEmotion3: Image? = nil
     
 
-
-    
     var body: some View {
         
             VStack{

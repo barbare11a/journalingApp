@@ -34,11 +34,18 @@ struct FeelingsSummaryView: View {
                 
                 
                 Spacer()
-                
-                Image(systemName: "calendar")
-                    .padding()
-                    .imageScale(.large)
-                    .padding(.trailing)
+                    
+                    NavigationLink(destination: CalendarView()){
+                        
+                        Image(systemName: "calendar")
+                            .padding()
+                            .imageScale(.large)
+                            .padding(.trailing)
+                            .foregroundColor(.black)
+                        
+                        
+                    }
+                    .environmentObject(DateHolder())
             
                 }
                 

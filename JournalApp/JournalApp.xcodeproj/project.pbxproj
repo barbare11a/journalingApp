@@ -19,7 +19,18 @@
 		E17389C62A63B0FE00CCD7A1 /* FeelingsSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17389C22A63B0FD00CCD7A1 /* FeelingsSummaryView.swift */; };
 		E17389CB2A63B10800CCD7A1 /* ProfilePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17389C92A63B10800CCD7A1 /* ProfilePageView.swift */; };
 		E17389CC2A63B10800CCD7A1 /* ProfileTopEmotionPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17389CA2A63B10800CCD7A1 /* ProfileTopEmotionPicker.swift */; };
-		E174AEE42A63B033005EFD04 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E174AEE32A63B033005EFD04 /* GoogleService-Info.plist */; };
+		E17389CE2A63B3AF00CCD7A1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E17389CD2A63B3AF00CCD7A1 /* GoogleService-Info.plist */; };
+		E17389D02A68A50A00CCD7A1 /* RecordFeelings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17389CF2A68A50A00CCD7A1 /* RecordFeelings.swift */; };
+		E17389D52A68AFC900CCD7A1 /* CalendarKit in Frameworks */ = {isa = PBXBuildFile; productRef = E17389D42A68AFC900CCD7A1 /* CalendarKit */; };
+		E17389EB2A68EB0900CCD7A1 /* EKWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17389E72A68EB0900CCD7A1 /* EKWrapper.swift */; };
+		E17389F22A6B4A5700CCD7A1 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17389F12A6B4A5700CCD7A1 /* AudioRecorder.swift */; };
+		E17389F42A6B4A5D00CCD7A1 /* RickRoll.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E17389F32A6B4A5C00CCD7A1 /* RickRoll.mp3 */; };
+		E17389F62A6B4B1800CCD7A1 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17389F52A6B4B1800CCD7A1 /* CalendarView.swift */; };
+		E17389FD2A6B4E1600CCD7A1 /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17389F72A6B4E1600CCD7A1 /* CalendarHelper.swift */; };
+		E17389FE2A6B4E1600CCD7A1 /* DateScrollerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17389F82A6B4E1600CCD7A1 /* DateScrollerView.swift */; };
+		E17389FF2A6B4E1600CCD7A1 /* MonthStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17389F92A6B4E1600CCD7A1 /* MonthStruct.swift */; };
+		E1738A012A6B4E1600CCD7A1 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17389FB2A6B4E1600CCD7A1 /* CalendarCell.swift */; };
+		E1738A022A6B4E1600CCD7A1 /* DateHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17389FC2A6B4E1600CCD7A1 /* DateHolder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +46,17 @@
 		E17389C22A63B0FD00CCD7A1 /* FeelingsSummaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeelingsSummaryView.swift; sourceTree = "<group>"; };
 		E17389C92A63B10800CCD7A1 /* ProfilePageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePageView.swift; sourceTree = "<group>"; };
 		E17389CA2A63B10800CCD7A1 /* ProfileTopEmotionPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTopEmotionPicker.swift; sourceTree = "<group>"; };
-		E174AEE32A63B033005EFD04 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E17389CD2A63B3AF00CCD7A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E17389CF2A68A50A00CCD7A1 /* RecordFeelings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordFeelings.swift; sourceTree = "<group>"; };
+		E17389E72A68EB0900CCD7A1 /* EKWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EKWrapper.swift; sourceTree = "<group>"; };
+		E17389F12A6B4A5700CCD7A1 /* AudioRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
+		E17389F32A6B4A5C00CCD7A1 /* RickRoll.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = RickRoll.mp3; sourceTree = "<group>"; };
+		E17389F52A6B4B1800CCD7A1 /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		E17389F72A6B4E1600CCD7A1 /* CalendarHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
+		E17389F82A6B4E1600CCD7A1 /* DateScrollerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateScrollerView.swift; sourceTree = "<group>"; };
+		E17389F92A6B4E1600CCD7A1 /* MonthStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthStruct.swift; sourceTree = "<group>"; };
+		E17389FB2A6B4E1600CCD7A1 /* CalendarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		E17389FC2A6B4E1600CCD7A1 /* DateHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHolder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +65,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B50F07CC2A6378F400745E2E /* FirebaseAuth in Frameworks */,
+				E17389D52A68AFC900CCD7A1 /* CalendarKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,8 +108,18 @@
 				E17389C22A63B0FD00CCD7A1 /* FeelingsSummaryView.swift */,
 				E17389C92A63B10800CCD7A1 /* ProfilePageView.swift */,
 				E17389CA2A63B10800CCD7A1 /* ProfileTopEmotionPicker.swift */,
+				E17389CF2A68A50A00CCD7A1 /* RecordFeelings.swift */,
+				E17389E72A68EB0900CCD7A1 /* EKWrapper.swift */,
+				E17389F12A6B4A5700CCD7A1 /* AudioRecorder.swift */,
+				E17389F32A6B4A5C00CCD7A1 /* RickRoll.mp3 */,
+				E17389F52A6B4B1800CCD7A1 /* CalendarView.swift */,
+				E17389FB2A6B4E1600CCD7A1 /* CalendarCell.swift */,
+				E17389F72A6B4E1600CCD7A1 /* CalendarHelper.swift */,
+				E17389FC2A6B4E1600CCD7A1 /* DateHolder.swift */,
+				E17389F82A6B4E1600CCD7A1 /* DateScrollerView.swift */,
+				E17389F92A6B4E1600CCD7A1 /* MonthStruct.swift */,
+				E17389CD2A63B3AF00CCD7A1 /* GoogleService-Info.plist */,
 				B59F38E02A5CD3B00058A41A /* Assets.xcassets */,
-				E174AEE32A63B033005EFD04 /* GoogleService-Info.plist */,
 				B59F38E22A5CD3B00058A41A /* Preview Content */,
 			);
 			path = JournalApp;
@@ -119,6 +151,7 @@
 			name = JournalApp;
 			packageProductDependencies = (
 				B50F07CB2A6378F400745E2E /* FirebaseAuth */,
+				E17389D42A68AFC900CCD7A1 /* CalendarKit */,
 			);
 			productName = JournalApp;
 			productReference = B59F38D92A5CD3AE0058A41A /* JournalApp.app */;
@@ -150,6 +183,7 @@
 			mainGroup = B59F38D02A5CD3AE0058A41A;
 			packageReferences = (
 				B50F07CA2A6378F400745E2E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				E17389D32A68AFC900CCD7A1 /* XCRemoteSwiftPackageReference "CalendarKit" */,
 			);
 			productRefGroup = B59F38DA2A5CD3AE0058A41A /* Products */;
 			projectDirPath = "";
@@ -167,7 +201,8 @@
 			files = (
 				B59F38E42A5CD3B00058A41A /* Preview Assets.xcassets in Resources */,
 				B59F38E12A5CD3B00058A41A /* Assets.xcassets in Resources */,
-				E174AEE42A63B033005EFD04 /* GoogleService-Info.plist in Resources */,
+				E17389CE2A63B3AF00CCD7A1 /* GoogleService-Info.plist in Resources */,
+				E17389F42A6B4A5D00CCD7A1 /* RickRoll.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,15 +213,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E17389FE2A6B4E1600CCD7A1 /* DateScrollerView.swift in Sources */,
 				E17389C62A63B0FE00CCD7A1 /* FeelingsSummaryView.swift in Sources */,
 				E17389CB2A63B10800CCD7A1 /* ProfilePageView.swift in Sources */,
+				E17389EB2A68EB0900CCD7A1 /* EKWrapper.swift in Sources */,
+				E17389F62A6B4B1800CCD7A1 /* CalendarView.swift in Sources */,
 				E17389C52A63B0FE00CCD7A1 /* EditProfileView.swift in Sources */,
+				E1738A022A6B4E1600CCD7A1 /* DateHolder.swift in Sources */,
 				B59F38DF2A5CD3AE0058A41A /* ContentView.swift in Sources */,
 				B59F38F32A61127E0058A41A /* NewAccountView.swift in Sources */,
+				E1738A012A6B4E1600CCD7A1 /* CalendarCell.swift in Sources */,
+				E17389F22A6B4A5700CCD7A1 /* AudioRecorder.swift in Sources */,
 				B549899B2A634201004964AD /* String.swift in Sources */,
+				E17389FF2A6B4E1600CCD7A1 /* MonthStruct.swift in Sources */,
+				E17389FD2A6B4E1600CCD7A1 /* CalendarHelper.swift in Sources */,
 				B59F38DD2A5CD3AE0058A41A /* JournalAppApp.swift in Sources */,
 				B59F38F12A6111F90058A41A /* LoginAppView.swift in Sources */,
 				E17389CC2A63B10800CCD7A1 /* ProfileTopEmotionPicker.swift in Sources */,
+				E17389D02A68A50A00CCD7A1 /* RecordFeelings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +439,14 @@
 				minimumVersion = 10.0.0;
 			};
 		};
+		E17389D32A68AFC900CCD7A1 /* XCRemoteSwiftPackageReference "CalendarKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/richardtop/CalendarKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -402,6 +454,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B50F07CA2A6378F400745E2E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		E17389D42A68AFC900CCD7A1 /* CalendarKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E17389D32A68AFC900CCD7A1 /* XCRemoteSwiftPackageReference "CalendarKit" */;
+			productName = CalendarKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

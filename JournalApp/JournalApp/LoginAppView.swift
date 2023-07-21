@@ -92,7 +92,6 @@ struct LoginAppView: View {
                             if(email.count != 0){
                                 Image(systemName: email.isValidEmail() ? "checkmark" : "xmark")
                                     //.frame(width: 30)
-                                    
                                     .padding(.trailing)
                                     .padding(.trailing)
                                     .padding(.trailing)
@@ -203,9 +202,6 @@ struct LoginAppView: View {
                                     .foregroundColor(.blue)
                                     .padding(.top)
                                     .padding(.top)
-                                    //.padding(.leading)
-                                    //.padding(.leading)
-                                    //.padding(.leading)
                                     
                             
                                 .alert(isPresented: $showErrorAlert, content:{

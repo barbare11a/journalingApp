@@ -31,5 +31,7 @@ struct JournalAppApp: App {
         WindowGroup {
             LoginAppView()
         }
+        
     }
+    
 }
