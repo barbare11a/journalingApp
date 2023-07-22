@@ -135,7 +135,7 @@ struct ProfilePageView: View {
                             .padding(.bottom)
                         
                     }
-                    .padding(.bottom)
+                    .padding(.bottom) 
                     .padding(.bottom)
                     .padding(.bottom)
                     
