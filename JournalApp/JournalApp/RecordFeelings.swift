@@ -34,6 +34,9 @@ struct RecordFeelings: View {
                 
                 Text("Take a moment for your feelings").bold().font(.system(size: 30))
                     .padding(.top)
+                    .multilineTextAlignment(.center)
+                    .padding(.top)
+
                 Text("Click on your emotion to record")
                     .padding(.top)
                 Spacer()
@@ -42,38 +45,57 @@ struct RecordFeelings: View {
                 }){
                     ZStack{
                         
-                        Image(myEmotion)
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 220, height: 220)
-                            .clipShape(Circle())
-                            .padding(.bottom)                            .padding(.bottom)
+                        VStack{
 
 
                         if record {
+                            
+                            Spacer()
                             Image("pause")
                                 .resizable()
                                 .scaledToFill()
                                 .frame(width: 220, height: 220)
                                 .clipShape(Circle())
                                 .padding(.bottom)                      .padding(.bottom)
+                            
+                            Spacer()
+                            NavigationLink(
+                                destination: FeelingsSummaryView(emotionColor: $emotionColor, myEmotion: $myEmotion),
+                                label: {
+                                    Text("Save Recording")
+                                })
+                                .foregroundColor(.blue)
+                                .padding(.bottom)
+                                .padding(.bottom)
+                                .contentShape(Rectangle())
+                        }else{
+                            Spacer()
+                            Image(myEmotion)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 220, height: 220)
+                                .clipShape(Circle())
+                                .padding(.bottom)                            .padding(.bottom)
+                            
+                            Spacer()
+                            NavigationLink(
+                                destination: FeelingsSummaryView(emotionColor: $emotionColor, myEmotion: $myEmotion),
+                                label: {
+                                    Text("I want to write")
+                                })
+                            .foregroundColor(.blue)
+                            .padding(.bottom)
+                            .padding(.bottom)
+                            .contentShape(Rectangle())
+                            
+                        }
                         }
                     }
                 }
                 Spacer()
                 
-        
                 
-                NavigationLink(
-                    destination: FeelingsSummaryView(emotionColor: $emotionColor, myEmotion: $myEmotion),
-                    label: {
-                        Text("I want to write")
-                    })
-                .foregroundColor(.blue)
-                .padding(.bottom)
-                .padding(.bottom)
-
-                .contentShape(Rectangle())
+              
             }
         }
     }

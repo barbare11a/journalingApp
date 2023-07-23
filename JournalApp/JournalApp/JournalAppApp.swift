@@ -28,9 +28,10 @@ struct JournalAppApp: App {
         FirebaseApp.configure()
     }
     var body: some Scene {
-        WindowGroup {
-            LoginAppView()
-        }
+        
+            WindowGroup {
+                LoginAppView()
+            }
         
     }
     

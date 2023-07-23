@@ -17,7 +17,7 @@ struct FeelingsSummaryView: View {
     
     var body: some View {
         
-        NavigationStack{
+        NavigationView{
             
             VStack{
                 

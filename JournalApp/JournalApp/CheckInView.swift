@@ -39,11 +39,12 @@ struct CheckInView: View {
           
                 VStack(alignment: .leading, content:{
                     
-                    Text("Good morning, Mia")
+                    Text("Welcome, Mia")
                         .font(.title3)
                         .padding(.top,50)
                         .padding(.leading, 40)
                         .padding(.bottom, 50)
+                    
                     
                     
                     Text("Get started with your daily check-in")

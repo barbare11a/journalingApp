@@ -24,7 +24,7 @@ struct ProfilePageView: View {
 
     var body: some View {
         
-        NavigationStack{
+        NavigationView{
             VStack{
                 HStack{
                     
@@ -131,7 +131,7 @@ struct ProfilePageView: View {
                     .padding(.bottom)
                     
                     HStack{
-                       
+                        
                         Text(email) // Display email if it exists
                             .font(.system(size: 25))
                             .background(Rectangle().fill(Color("input-background-color")).frame(width: 300, height: 50).cornerRadius(20))
@@ -149,8 +149,8 @@ struct ProfilePageView: View {
                 Spacer()
                 
             }//end VStack
-        }
             
+        }
         }//end body
         
     
