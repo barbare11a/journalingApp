@@ -15,6 +15,8 @@
 		B59F38E42A5CD3B00058A41A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B59F38E32A5CD3B00058A41A /* Preview Assets.xcassets */; };
 		B59F38F12A6111F90058A41A /* LoginAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59F38F02A6111F90058A41A /* LoginAppView.swift */; };
 		B59F38F32A61127E0058A41A /* NewAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59F38F22A61127E0058A41A /* NewAccountView.swift */; };
+		E15D18D02A6CA64700303067 /* CheckInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15D18CF2A6CA64700303067 /* CheckInView.swift */; };
+		E15D18D22A6CA67200303067 /* FeelingsPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15D18D12A6CA67200303067 /* FeelingsPicker.swift */; };
 		E17389C52A63B0FE00CCD7A1 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17389C12A63B0FD00CCD7A1 /* EditProfileView.swift */; };
 		E17389C62A63B0FE00CCD7A1 /* FeelingsSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17389C22A63B0FD00CCD7A1 /* FeelingsSummaryView.swift */; };
 		E17389CB2A63B10800CCD7A1 /* ProfilePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17389C92A63B10800CCD7A1 /* ProfilePageView.swift */; };
@@ -42,6 +44,8 @@
 		B59F38E32A5CD3B00058A41A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B59F38F02A6111F90058A41A /* LoginAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAppView.swift; sourceTree = "<group>"; };
 		B59F38F22A61127E0058A41A /* NewAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAccountView.swift; sourceTree = "<group>"; };
+		E15D18CF2A6CA64700303067 /* CheckInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInView.swift; sourceTree = "<group>"; };
+		E15D18D12A6CA67200303067 /* FeelingsPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingsPicker.swift; sourceTree = "<group>"; };
 		E17389C12A63B0FD00CCD7A1 /* EditProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		E17389C22A63B0FD00CCD7A1 /* FeelingsSummaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeelingsSummaryView.swift; sourceTree = "<group>"; };
 		E17389C92A63B10800CCD7A1 /* ProfilePageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePageView.swift; sourceTree = "<group>"; };
@@ -118,6 +122,8 @@
 				E17389FC2A6B4E1600CCD7A1 /* DateHolder.swift */,
 				E17389F82A6B4E1600CCD7A1 /* DateScrollerView.swift */,
 				E17389F92A6B4E1600CCD7A1 /* MonthStruct.swift */,
+				E15D18CF2A6CA64700303067 /* CheckInView.swift */,
+				E15D18D12A6CA67200303067 /* FeelingsPicker.swift */,
 				E17389CD2A63B3AF00CCD7A1 /* GoogleService-Info.plist */,
 				B59F38E02A5CD3B00058A41A /* Assets.xcassets */,
 				B59F38E22A5CD3B00058A41A /* Preview Content */,
@@ -215,12 +221,14 @@
 			files = (
 				E17389FE2A6B4E1600CCD7A1 /* DateScrollerView.swift in Sources */,
 				E17389C62A63B0FE00CCD7A1 /* FeelingsSummaryView.swift in Sources */,
+				E15D18D22A6CA67200303067 /* FeelingsPicker.swift in Sources */,
 				E17389CB2A63B10800CCD7A1 /* ProfilePageView.swift in Sources */,
 				E17389EB2A68EB0900CCD7A1 /* EKWrapper.swift in Sources */,
 				E17389F62A6B4B1800CCD7A1 /* CalendarView.swift in Sources */,
 				E17389C52A63B0FE00CCD7A1 /* EditProfileView.swift in Sources */,
 				E1738A022A6B4E1600CCD7A1 /* DateHolder.swift in Sources */,
 				B59F38DF2A5CD3AE0058A41A /* ContentView.swift in Sources */,
+				E15D18D02A6CA64700303067 /* CheckInView.swift in Sources */,
 				B59F38F32A61127E0058A41A /* NewAccountView.swift in Sources */,
 				E1738A012A6B4E1600CCD7A1 /* CalendarCell.swift in Sources */,
 				E17389F22A6B4A5700CCD7A1 /* AudioRecorder.swift in Sources */,

@@ -18,8 +18,27 @@ struct CalendarView: View
         
         NavigationStack{
             
+            
+            
             VStack(spacing: 1)
             {
+                
+                
+                HStack{
+                    
+                    NavigationLink(destination: ProfilePageView()) {
+                        Image(systemName: "person.circle")
+                            .imageScale(.large)
+                            .fontWeight(.light)
+                            .padding(.leading)
+                            .padding(.leading)
+                            .foregroundColor(.black)
+                    }
+                    
+                    Spacer()
+                }
+                    
+                    
                 DateScrollerView()
                     .environmentObject(dateHolder)
                     .padding()
@@ -42,11 +61,15 @@ struct CalendarView: View
             Text("Fri").dayOfWeek()
             Text("Sat").dayOfWeek()
         }
+        .padding(.top)
+        .padding(.leading)
+        .padding(.trailing)
+        
     }
     
     var calendarGrid: some View
     {
-        VStack(spacing: 1)
+        VStack(spacing: -30)
         {
             let daysInMonth = CalendarHelper().daysInMonth(dateHolder.date)
             let firstDayOfMonth = CalendarHelper().firstOfMonth(dateHolder.date)
@@ -71,14 +94,21 @@ struct CalendarView: View
             }
         }
         .frame(maxHeight: .infinity)
+        .padding(.leading)
+        .padding(.trailing)
+        .padding(.bottom)
+      
     }
 }
 struct CalendarView_Previews: PreviewProvider {
-    
-    @EnvironmentObject var dateHolder: DateHolder
-    
+        
+
     static var previews: some View {
+        
+        let dateHolder = DateHolder()
+
        CalendarView()
+            .environmentObject(dateHolder)
     }
 }
 

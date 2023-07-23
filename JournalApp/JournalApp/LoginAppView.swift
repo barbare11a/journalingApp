@@ -11,8 +11,8 @@ import Firebase
 struct LoginAppView: View {
     
     
-    @State private var email: String = ""
-    @State private var password: String = ""
+    @State var email: String = ""
+    @State var password: String = ""
     
     @State private var isCreateAccountViewPresented = false
     @State private var isPasswordCorrect: Bool = false
@@ -223,7 +223,7 @@ struct LoginAppView: View {
                 
                 
             }//end of zstack
-            NavigationLink(destination: FeelingsSummaryView(), isActive: $isPasswordCorrect){
+            NavigationLink(destination: CheckInView(), isActive: $isPasswordCorrect){
                 EmptyView()
             }
         }//end of navstack

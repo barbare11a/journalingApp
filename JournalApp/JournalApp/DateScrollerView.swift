@@ -49,7 +49,15 @@ struct DateScrollerView: View
 }
 
 struct DateScrollerView_Previews: PreviewProvider {
+    
     static var previews: some View {
-        DateScrollerView()
+        
+        let dateHolder = DateHolder()
+                
+                // Wrap the DateScrollerView in a Group to set the environment object
+                Group {
+                    DateScrollerView()
+                        .environmentObject(dateHolder)
+                }
     }
 }

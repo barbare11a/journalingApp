@@ -13,24 +13,29 @@ struct ProfilePageView: View {
     @State var userName:String = "Nicole"
     @State var firstName:String = "Nicole"
     @State var lastName:String = "Cruz"
-    @State var email:String = "nicolerocks@gmail.com"
+    @State var email: String = "nicoleRocks@gmail.com"
     @State var profileImage: UIImage? = nil
     @State var isShowingEditProfile: Bool = false
     @State var topEmotion1: Image? = nil
     @State var topEmotion2: Image? = nil
     @State var topEmotion3: Image? = nil
+   // @Binding var email: String
     
 
     var body: some View {
         
+        NavigationStack{
             VStack{
                 HStack{
                     
                     Spacer()
                     
-                    Image(systemName: "calendar")
-                        .padding()
-                        .imageScale(.large)
+                    NavigationLink(destination: CalendarView()){
+                        Image(systemName: "calendar")
+                            .padding()
+                            .imageScale(.large)
+                            .foregroundColor(.black)
+                    }
                     
                 }//end HStack
                 .padding(.trailing)
@@ -47,26 +52,26 @@ struct ProfilePageView: View {
                         .bold()
                         .foregroundColor(.blue)
                     
-                  
-                   Text("Edit Profile")
-                       .padding(.trailing)
-                       .foregroundColor(.blue)
-                       .onTapGesture{
-                           isShowingEditProfile = true
-                       }
-                       .sheet(isPresented: $isShowingEditProfile) {
-                           EditProfileView(profileImage: $profileImage, isShowingEditProfile: $isShowingEditProfile, topEmotion1: $topEmotion1, topEmotion2: $topEmotion2, topEmotion3: $topEmotion3) {
-                               // Closure to handle image update
-                               updatedImage in
-                               profileImage = updatedImage
-                           }
-                       }
-                    }
-                    .padding(.leading)
-                    .padding(.trailing)
                     
+                    Text("Edit Profile")
+                        .padding(.trailing)
+                        .foregroundColor(.blue)
+                        .onTapGesture{
+                            isShowingEditProfile = true
+                        }
+                        .sheet(isPresented: $isShowingEditProfile) {
+                            EditProfileView(profileImage: $profileImage, isShowingEditProfile: $isShowingEditProfile, topEmotion1: $topEmotion1, topEmotion2: $topEmotion2, topEmotion3: $topEmotion3) {
+                                // Closure to handle image update
+                                updatedImage in
+                                profileImage = updatedImage
+                            }
+                        }
+                }
+                .padding(.leading)
+                .padding(.trailing)
                 
-            ProfileView(profileImage: profileImage)
+                
+                ProfileView(profileImage: profileImage)
                 
                 
                 Text("my top three emotions:")
@@ -74,8 +79,8 @@ struct ProfilePageView: View {
                 
                 
                 HStack{
-                        
-                        emotionsView(topEmotion1: topEmotion1, topEmotion2: topEmotion2, topEmotion3: topEmotion3)
+                    
+                    emotionsView(topEmotion1: topEmotion1, topEmotion2: topEmotion2, topEmotion3: topEmotion3)
                     
                     
                 }
@@ -126,8 +131,8 @@ struct ProfilePageView: View {
                     .padding(.bottom)
                     
                     HStack{
-                        
-                        Text(email)
+                       
+                        Text(email) // Display email if it exists
                             .font(.system(size: 25))
                             .background(Rectangle().fill(Color("input-background-color")).frame(width: 300, height: 50).cornerRadius(20))
                             .padding(.bottom)
@@ -144,6 +149,7 @@ struct ProfilePageView: View {
                 Spacer()
                 
             }//end VStack
+        }
             
         }//end body
         
@@ -227,9 +233,11 @@ struct emotionsView: View {
 
 
 struct ProfilePageView_Previews: PreviewProvider {
+    @Binding var email: String?
+
     static var previews: some View {
      
-            ProfilePageView()
+        ProfilePageView()
     }
 }
 

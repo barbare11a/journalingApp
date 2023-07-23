@@ -12,10 +12,12 @@ struct FeelingsSummaryView: View {
     @State var title:String = ""
     @State var journalEntry:String = ""
     @State var showProfilePage:Bool = false
+    @Binding var emotionColor:String
+    @Binding var myEmotion:String
     
     var body: some View {
         
-        NavigationView{
+        NavigationStack{
             
             VStack{
                 
@@ -34,19 +36,15 @@ struct FeelingsSummaryView: View {
                 
                 
                 Spacer()
-                    
-                    NavigationLink(destination: CalendarView()){
-                        
+                
+                    NavigationLink(destination: CalendarView()) {
                         Image(systemName: "calendar")
                             .padding()
                             .imageScale(.large)
                             .padding(.trailing)
                             .foregroundColor(.black)
-                        
-                        
                     }
-                    .environmentObject(DateHolder())
-            
+                        
                 }
                 
                 VStack{
@@ -78,9 +76,9 @@ struct FeelingsSummaryView: View {
                         Image(systemName: "pin")
                             .padding(.leading)
                         
-                        Text("Embarassed")
+                        Text(myEmotion)
                             .fontWeight(.bold)
-                            .background(Rectangle().fill(Color.purple).shadow(radius: 2))
+                            .background(Rectangle().fill(Color(emotionColor)).shadow(radius: 2).frame(width: 60, height: 30))
                             .padding()
                         
                         
@@ -131,13 +129,22 @@ struct FeelingsSummaryView: View {
     
 }//end FeelingsSummaryView
 
-
-
+struct NavigationLinkDestination<Content: View>: View {
+    let destination: Content
+    
+    var body: some View {
+        destination
+    }
+    
+    init(@ViewBuilder destination: () -> Content) {
+        self.destination = destination()
+    }
+}
 
 
 struct FeelingsSummaryView_Previews: PreviewProvider {
     static var previews: some View {
-        FeelingsSummaryView()
+        FeelingsSummaryView(emotionColor: .constant("angry-color"), myEmotion: .constant("angry"))
     }
 }
 
