@@ -12,7 +12,7 @@ struct EditProfileView: View {
     @State var userName:String = "Nicole"
     @State var firstName:String = "Nicole"
     @State var lastName:String = "Cruz"
-    @State var email:String = "nicolerocks@gmail.com"
+    @State var email:String = "Test@test.com"
     @Binding var profileImage: UIImage?
     @Binding var isShowingEditProfile: Bool
     @State private var showingImagePicker = false

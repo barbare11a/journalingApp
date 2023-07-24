@@ -11,13 +11,13 @@ import Firebase
 struct LoginAppView: View {
     
     
-    @State private var email: String = ""
-    @State private var password: String = ""
+    @State var email: String = ""
+    @State var password: String = ""
     
     @State private var isCreateAccountViewPresented = false
     @State private var isPasswordCorrect: Bool = false
     @State private var showErrorAlert: Bool = false
-
+    @EnvironmentObject var dateHolder: DateHolder
     
     
     var body: some View {
@@ -92,7 +92,6 @@ struct LoginAppView: View {
                             if(email.count != 0){
                                 Image(systemName: email.isValidEmail() ? "checkmark" : "xmark")
                                     //.frame(width: 30)
-                                    
                                     .padding(.trailing)
                                     .padding(.trailing)
                                     .padding(.trailing)
@@ -203,9 +202,6 @@ struct LoginAppView: View {
                                     .foregroundColor(.blue)
                                     .padding(.top)
                                     .padding(.top)
-                                    //.padding(.leading)
-                                    //.padding(.leading)
-                                    //.padding(.leading)
                                     
                             
                                 .alert(isPresented: $showErrorAlert, content:{
@@ -227,7 +223,8 @@ struct LoginAppView: View {
                 
                 
             }//end of zstack
-            NavigationLink(destination: FeelingsSummaryView(), isActive: $isPasswordCorrect){
+            NavigationLink(destination: CheckInView()            .environmentObject(dateHolder)
+, isActive: $isPasswordCorrect){
                 EmptyView()
             }
         }//end of navstack
@@ -235,8 +232,14 @@ struct LoginAppView: View {
 }//end of loginview
 
 struct LoginAppView_Previews: PreviewProvider {
+    
     static var previews: some View {
+        
+        let dateHolder = DateHolder()
+
         LoginAppView()
+            .environmentObject(dateHolder)
+
     }
 }
 
