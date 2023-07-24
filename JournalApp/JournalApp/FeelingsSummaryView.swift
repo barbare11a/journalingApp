@@ -14,8 +14,16 @@ struct FeelingsSummaryView: View {
     @State var showProfilePage:Bool = false
     @Binding var emotionColor:String
     @Binding var myEmotion:String
+    @EnvironmentObject var dateHolder: DateHolder
+    
     
     var body: some View {
+        
+        let dateFormatter: DateFormatter = {
+                let formatter = DateFormatter()
+                formatter.dateFormat = "MMMM d, yyyy h:mm a"
+                return formatter
+            }()
         
         NavigationView{
             
@@ -23,7 +31,7 @@ struct FeelingsSummaryView: View {
                 
                 HStack{
                     
-                    NavigationLink(destination: ProfilePageView()) {
+                    NavigationLink(destination: ProfilePageView(myEmotion: $myEmotion, emotionColor: $emotionColor)) {
                         Image(systemName: "person.circle")
                             .padding()
                             .imageScale(.large)
@@ -32,12 +40,10 @@ struct FeelingsSummaryView: View {
                             .foregroundColor(.black)
                     }
                     
-                    
-                
                 
                 Spacer()
                 
-                    NavigationLink(destination: CalendarView()) {
+                    NavigationLink(destination: CalendarView(myEmotion: $myEmotion, emotionColor: $emotionColor).environmentObject(dateHolder)) {
                         Image(systemName: "calendar")
                             .padding()
                             .imageScale(.large)
@@ -64,7 +70,7 @@ struct FeelingsSummaryView: View {
                         Image(systemName: "calendar")
                             .padding(.leading)
                         
-                        Text("June 6, 2023 12:45 PM")
+                        Text(dateFormatter.string(from: dateHolder.date))
                             .fontWeight(.bold)
                             .padding(.leading)
                         
@@ -142,9 +148,15 @@ struct NavigationLinkDestination<Content: View>: View {
 }
 
 
+
+
 struct FeelingsSummaryView_Previews: PreviewProvider {
     static var previews: some View {
+        
+        let dateHolder = DateHolder()
+        
         FeelingsSummaryView(emotionColor: .constant("angry-color"), myEmotion: .constant("angry"))
+            .environmentObject(dateHolder)
     }
 }
 

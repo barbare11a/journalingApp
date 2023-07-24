@@ -9,6 +9,9 @@
 import SwiftUI
 
 struct CheckInView: View {
+    
+    @EnvironmentObject var dateHolder: DateHolder
+    
     var body: some View {
         
         NavigationStack{
@@ -17,9 +20,8 @@ struct CheckInView: View {
                 Image("homepage")
                     .padding(.top,230)
                 
-         
-                NavigationLink(
-                    destination: FeelingsPicker(),
+                         NavigationLink(
+                            destination: FeelingsPicker(myEmotion: "", emotionColor: ""),
                     label: {
                         Text("Let's get started →")
                           
@@ -27,7 +29,7 @@ struct CheckInView: View {
                 .font(.headline)
                 .fontWeight(.regular)
                 .foregroundColor(.white)
-                .padding(.horizontal,50)
+                .padding(.horizontal,60)
                 .padding(.vertical,25)
                 .offset(x: 0, y: 200)
                 .background(
@@ -36,6 +38,7 @@ struct CheckInView: View {
                         .shadow(radius:10)
                         .offset(x: 0, y: 200)
                         )
+                .padding(.top, 100)
           
                 VStack(alignment: .leading, content:{
                     
@@ -63,7 +66,7 @@ struct CheckInView: View {
             .navigationBarItems(
                 trailing:
                     NavigationLink(
-                        destination: CalendarView(), //this is a placeholder
+                        destination: CalendarView(myEmotion:.constant(""), emotionColor: .constant("")).environmentObject(dateHolder), //this is a placeholder
                         label: {
                             Image(systemName: "calendar")
                                 .padding(.trailing, 20)
@@ -80,6 +83,11 @@ struct CheckInView: View {
 
 struct CheckInView_Previews: PreviewProvider {
     static var previews: some View {
+        
+        let dateHolder = DateHolder()
+        
         CheckInView()
+            .environmentObject(dateHolder)
+
     }
 }

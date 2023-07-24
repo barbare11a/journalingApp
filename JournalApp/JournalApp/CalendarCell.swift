@@ -14,12 +14,37 @@ struct CalendarCell: View
     let startingSpaces : Int
     let daysInMonth : Int
     let daysInPrevMonth : Int
+    @Binding var myEmotion:String
+    let currentMonth: Int
+    let currentDay: Int
+    @Binding var emotionColor:String
+
     
     var body: some View
     {
-        Text(monthStruct().day())
-            .foregroundColor(textColor(type: monthStruct().monthType))
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        
+        VStack{
+            Text(monthStruct().day())
+                .foregroundColor(textColor(type: monthStruct().monthType))
+                .frame(maxWidth: .infinity, maxHeight: 40)
+                .padding(.top)
+            
+            if monthStruct().dayInt == currentDay && Calendar.current.component(.month, from: dateHolder.date) == currentMonth {
+                
+                NavigationLink(destination: FeelingsSummaryView(emotionColor: $emotionColor, myEmotion: $myEmotion)){
+                    
+                    Image(myEmotion)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 20, height: 20)
+                    
+                }
+            }
+            
+            Spacer()
+        }
+            
+        
     }
     func textColor(type: MonthType) -> Color
     {
@@ -43,10 +68,15 @@ struct CalendarCell: View
         let day = count - start
         return MonthStruct(monthType: MonthType.Current, dayInt: day)
     }
+    
+    
+    
+    
+    
 }
 
 struct CalendarCell_Previews: PreviewProvider {
     static var previews: some View {
-        CalendarCell(count: 1, startingSpaces: 1, daysInMonth: 1, daysInPrevMonth: 1)
+        CalendarCell(count: 1, startingSpaces: 1, daysInMonth: 1, daysInPrevMonth: 1, myEmotion: .constant("angry"),currentMonth: 7, currentDay: 24, emotionColor: .constant("red"))
     }
 }

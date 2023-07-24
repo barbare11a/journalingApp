@@ -17,7 +17,7 @@ struct LoginAppView: View {
     @State private var isCreateAccountViewPresented = false
     @State private var isPasswordCorrect: Bool = false
     @State private var showErrorAlert: Bool = false
-
+    @EnvironmentObject var dateHolder: DateHolder
     
     
     var body: some View {
@@ -223,7 +223,8 @@ struct LoginAppView: View {
                 
                 
             }//end of zstack
-            NavigationLink(destination: CheckInView(), isActive: $isPasswordCorrect){
+            NavigationLink(destination: CheckInView()            .environmentObject(dateHolder)
+, isActive: $isPasswordCorrect){
                 EmptyView()
             }
         }//end of navstack
@@ -231,8 +232,14 @@ struct LoginAppView: View {
 }//end of loginview
 
 struct LoginAppView_Previews: PreviewProvider {
+    
     static var previews: some View {
+        
+        let dateHolder = DateHolder()
+
         LoginAppView()
+            .environmentObject(dateHolder)
+
     }
 }
 

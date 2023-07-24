@@ -5,19 +5,19 @@
 
 import SwiftUI
 
-//
-
-import SwiftUI
-
 struct CalendarView: View
 {
     @EnvironmentObject var dateHolder: DateHolder
+    @Binding var myEmotion: String
+    @Binding var emotionColor:String
     
     var body: some View
     {
         
-        NavigationStack{
-            
+        var currentDay = Calendar.current.component(.day, from: dateHolder.date)
+        var currentMonth = Calendar.current.component(.month, from: dateHolder.date)
+        
+        NavigationView{
             
             
             VStack(spacing: 1)
@@ -26,7 +26,7 @@ struct CalendarView: View
                 
                 HStack{
                     
-                    NavigationLink(destination: ProfilePageView()) {
+                    NavigationLink(destination: ProfilePageView(myEmotion: $myEmotion, emotionColor: $emotionColor).environmentObject(dateHolder)) {
                         Image(systemName: "person.circle")
                             .imageScale(.large)
                             .fontWeight(.light)
@@ -37,16 +37,17 @@ struct CalendarView: View
                     
                     Spacer()
                 }
-                    
-                    
+                
+                
                 DateScrollerView()
                     .environmentObject(dateHolder)
                     .padding()
                 dayOfWeekStack
-                calendarGrid
-                
+                calendarGrid(currentDay: currentDay, currentMonth: currentMonth)
+
             }
         }
+        
     }
     
     var dayOfWeekStack: some View
@@ -67,7 +68,7 @@ struct CalendarView: View
         
     }
     
-    var calendarGrid: some View
+    func calendarGrid(currentDay: Int, currentMonth: Int) -> some View
     {
         VStack(spacing: -30)
         {
@@ -79,6 +80,7 @@ struct CalendarView: View
             
             ForEach(0..<6)
             {
+                
                 row in
                 HStack(spacing: 1)
                 {
@@ -86,12 +88,13 @@ struct CalendarView: View
                     {
                         column in
                         let count = column + (row * 7)
-                        CalendarCell(count: count, startingSpaces:startingSpaces, daysInMonth: daysInMonth, daysInPrevMonth: daysInPrevMonth)
+                        CalendarCell(count: count, startingSpaces:startingSpaces, daysInMonth: daysInMonth, daysInPrevMonth: daysInPrevMonth, myEmotion: $myEmotion, currentMonth: currentMonth, currentDay: currentDay, emotionColor: $emotionColor)
                             .environmentObject(dateHolder)
                         
                     }
                 }
             }
+            
         }
         .frame(maxHeight: .infinity)
         .padding(.leading)
@@ -107,7 +110,7 @@ struct CalendarView_Previews: PreviewProvider {
         
         let dateHolder = DateHolder()
 
-       CalendarView()
+        CalendarView(myEmotion: .constant("calm"), emotionColor: .constant("calm-color"))
             .environmentObject(dateHolder)
     }
 }

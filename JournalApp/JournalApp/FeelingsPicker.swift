@@ -13,9 +13,14 @@ struct FeelingsPicker: View {
     
     @State  var session: AVAudioSession?
     @State  var recorder: AVAudioRecorder?
+    @State var audioURL: URL?
+    @EnvironmentObject var dateHolder: DateHolder
+    @State var myEmotion:String
+    @State var emotionColor:String
     
     
     var body: some View {
+        
         NavigationView{
            
             VStack(alignment: .center, spacing: 50, content:{
@@ -27,17 +32,18 @@ struct FeelingsPicker: View {
                 HStack{
                     Spacer()
                     NavigationLink(
-                        destination: RecordFeelings(session: $session, recorder: $recorder, myEmotion: "happy", emotionColor: "happy-color")){
+                        destination: RecordFeelings(session: $session, recorder: $recorder, myEmotion: .constant("happy"), emotionColor: .constant("happy-color"), audioURL: $audioURL)){
                             VStack{
                                 Image("happy")
                                 Text("happy")
                                     .foregroundColor(.black)
                             }
                         }
+                
 
                     Spacer()
                     NavigationLink(
-                        destination: RecordFeelings(session: $session, recorder: $recorder, myEmotion: "calm", emotionColor: "calm-color")){
+                        destination: RecordFeelings(session: $session, recorder: $recorder, myEmotion: .constant("calm"), emotionColor: .constant("calm-color"), audioURL: $audioURL)){
                             VStack{
                                 Image("calm")
                                 Text("calm")
@@ -45,9 +51,10 @@ struct FeelingsPicker: View {
 
                             }
                         }
+                  
                     Spacer()
                     NavigationLink(
-                        destination: RecordFeelings(session: $session, recorder: $recorder, myEmotion: "sad", emotionColor: "sad-color")){
+                        destination: RecordFeelings(session: $session, recorder: $recorder, myEmotion: .constant("sad"), emotionColor: .constant("sad-color"), audioURL: $audioURL)){
                             VStack{
                                 Image("sad")
                                 Text("sad")
@@ -55,13 +62,14 @@ struct FeelingsPicker: View {
 
                             }
                         }
+                
                     Spacer()
                 }
                 
                 HStack{
                     Spacer()
                     NavigationLink(
-                        destination: RecordFeelings(session: $session, recorder: $recorder, myEmotion: "angry", emotionColor: "angry-color")){
+                        destination: RecordFeelings(session: $session, recorder: $recorder, myEmotion: .constant("angry"), emotionColor: .constant("angry-color"), audioURL: $audioURL)){
                             VStack{
                                 Image("angry")
                                 Text("angry")
@@ -69,9 +77,10 @@ struct FeelingsPicker: View {
 
                             }
                         }
+          
                     Spacer()
                     NavigationLink(
-                        destination: RecordFeelings(session: $session, recorder: $recorder, myEmotion: "anxious", emotionColor: "anxious-color")){
+                        destination: RecordFeelings(session: $session, recorder: $recorder, myEmotion: .constant("anxious"), emotionColor: .constant("anxious-color"), audioURL: $audioURL)){
                             VStack{
                                 Image("anxious")
                                 Text("anxious")
@@ -81,7 +90,7 @@ struct FeelingsPicker: View {
                         }
                     Spacer()
                     NavigationLink(
-                        destination: RecordFeelings(session: $session, recorder: $recorder, myEmotion: "loved", emotionColor: "loved-color")){
+                        destination: RecordFeelings(session: $session, recorder: $recorder, myEmotion: .constant("loved"), emotionColor: .constant("loved-color"), audioURL: $audioURL)){
                             VStack{
                                 Image("loved")
                                 Text("loved")
@@ -95,7 +104,7 @@ struct FeelingsPicker: View {
                 HStack{
                     Spacer()
                     NavigationLink(
-                        destination: RecordFeelings(session: $session, recorder: $recorder, myEmotion: "embarrassed", emotionColor: "embarrassed-color")){
+                        destination: RecordFeelings(session: $session, recorder: $recorder, myEmotion: .constant("embarrassed"), emotionColor: .constant("embarrassed-color"), audioURL: $audioURL)){
                             VStack{
                                 Image("embarrassed")
                                 Text("embarrassed")
@@ -105,7 +114,7 @@ struct FeelingsPicker: View {
                         }
                     Spacer()
                     NavigationLink(
-                        destination: RecordFeelings(session: $session, recorder: $recorder, myEmotion: "bored", emotionColor: "bored-color")){
+                        destination: RecordFeelings(session: $session, recorder: $recorder, myEmotion: .constant("bored"), emotionColor: .constant("bored-color"), audioURL: $audioURL)){
                             VStack{
                                 Image("bored")
                                 Text("bored")
@@ -115,7 +124,7 @@ struct FeelingsPicker: View {
                         }
                     Spacer()
                     NavigationLink(
-                        destination: RecordFeelings(session: $session, recorder: $recorder, myEmotion: "jealous", emotionColor: "jealous-color")){
+                        destination: RecordFeelings(session: $session, recorder: $recorder, myEmotion: .constant("jealous"), emotionColor: .constant("jealous-color"), audioURL: $audioURL)){
                             VStack{
                                 Image("jealous")
                                 Text("jealous")
@@ -138,7 +147,7 @@ struct FeelingsPicker: View {
             .navigationBarItems(
                 leading:
                     NavigationLink(
-                    destination: ProfilePageView(),
+                    destination: ProfilePageView(myEmotion: $myEmotion, emotionColor: $emotionColor).environmentObject(dateHolder),
                     label: {
                         Image(systemName: "person.circle")
                             .foregroundColor(.black)
@@ -146,7 +155,7 @@ struct FeelingsPicker: View {
                     .padding(.leading, 20),
                 trailing:
                 NavigationLink(
-                    destination: Text("CalenderView goes here"),
+                    destination: CalendarView(myEmotion: $myEmotion, emotionColor: $emotionColor).environmentObject(dateHolder),
                     label: {
                         Image(systemName: "calendar")
                         .padding(.trailing, 20)
@@ -170,6 +179,11 @@ struct EmotionRecorder: View{
 
 struct FeelingsPicker_Previews: PreviewProvider {
     static var previews: some View {
-        FeelingsPicker()
+        
+        let dateHolder = DateHolder()
+
+        
+        FeelingsPicker(myEmotion: "calm", emotionColor: "calm-color")
+            .environmentObject(dateHolder)
     }
 }

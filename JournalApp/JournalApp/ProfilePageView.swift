@@ -19,7 +19,9 @@ struct ProfilePageView: View {
     @State var topEmotion1: Image? = nil
     @State var topEmotion2: Image? = nil
     @State var topEmotion3: Image? = nil
-   // @Binding var email: String
+    @EnvironmentObject var dateHolder: DateHolder
+    @Binding var myEmotion:String
+    @Binding var emotionColor:String
     
 
     var body: some View {
@@ -30,7 +32,7 @@ struct ProfilePageView: View {
                     
                     Spacer()
                     
-                    NavigationLink(destination: CalendarView()){
+                    NavigationLink(destination: CalendarView(myEmotion: $myEmotion, emotionColor: $emotionColor).environmentObject(dateHolder)){
                         Image(systemName: "calendar")
                             .padding()
                             .imageScale(.large)
@@ -233,11 +235,14 @@ struct emotionsView: View {
 
 
 struct ProfilePageView_Previews: PreviewProvider {
-    @Binding var email: String?
+    
 
     static var previews: some View {
+        
+        let dateHolder = DateHolder()
      
-        ProfilePageView()
+        ProfilePageView(myEmotion: .constant("calm"), emotionColor: .constant("calm-color"))
+            .environmentObject(dateHolder)
     }
 }
 
